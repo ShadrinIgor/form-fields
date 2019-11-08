@@ -1,0 +1,66 @@
+<div fxLayout="column"
+     class="position-relative"
+     [ngClass]="{
+     'border-block textarea-field mb-21': type === 'textarea',
+      'form-field-error': (state.isSubmitted || !stateControl.isPristine || stateControl.isTouched) && !stateControl.isValid}">
+
+  <ng-container [ngSwitch]="type">
+
+    <ng-container *ngSwitchCase="'select'">
+      <wt-form-field-select
+        [title]="title"
+        [value]="modelControl"
+        [field]="field"
+        [options]="options"
+        [require]="isRequired"
+        (changeField)="changeField($event)"
+        (openedChange)="openedChange($event)"
+      ></wt-form-field-select>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'slide-toggle'">
+      <wt-form-field-slide-toggle
+        [title]="title"
+        [value]="modelControl"
+        [field]="field"
+        [require]="isRequired"
+        (changeField)="changeField($event)"
+      ></wt-form-field-slide-toggle>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'select-multiple'">
+      <wt-form-field-select
+        [title]="title"
+        [value]="modelControl"
+        [field]="field"
+        [options]="options"
+        [multiple]="true"
+        [require]="isRequired"
+        (changeField)="changeField($event)"
+        (openedChange)="openedChange($event)"
+      ></wt-form-field-select>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'textarea'">
+        <label [id]="'field-' + field">{{title}}{{isRequired ? ' *' : ''}}</label>
+        <angular-editor [(ngModel)]="modelControl"
+                        (ngModelChange)="editorChange($event)"
+                        [ngModelOptions]="{standalone: true}"></angular-editor>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+      <mat-form-field appearance="outline" class="width100">
+        <mat-label>{{title}}</mat-label>
+        <input matInput [required]="isRequired" [ngrxFormControlState]="stateControl">
+      </mat-form-field>
+    </ng-container>
+
+  </ng-container>
+
+  <wt-form-field-spinner *ngIf="loading"></wt-form-field-spinner>
+  <wt-form-field-error
+    *ngIf="(state.isSubmitted || !stateControl.isPristine || stateControl.isTouched) && !stateControl.isValid"
+    [field]="stateControl"
+    [ngClass]="{'textarea-error': type === 'textarea'}"
+  ></wt-form-field-error>
+</div>

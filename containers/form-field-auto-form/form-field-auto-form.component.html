@@ -1,0 +1,10 @@
+<wt-form-field
+  *ngFor="let field of fields"
+  [title]="field.title"
+  [field]="field.field"
+  [type]="field.type"
+  [loading]="field.loading"
+  [formId]="formId"
+  [state]="state"
+  [options]="field.options"
+></wt-form-field>

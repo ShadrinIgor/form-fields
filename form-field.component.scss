@@ -1,0 +1,24 @@
+@import "~@wt/scss/variables";
+
+.border-block {
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  padding: 15px 5px 5px 5px;
+}
+
+.form-field-error.border-block {
+  border: 1px solid $color_red;
+}
+
+.textarea-field label {
+  color: #5f5b5b;
+  font-size: 12px;
+  padding: 0 5px;
+  position: absolute;
+  background-color: #fff;
+  margin: -26px 0 10px 0;
+}
+
+.mb-21 {
+  margin-bottom: 21px;
+}

@@ -1,0 +1,38 @@
+{
+  "name": "@shadrin/form-fields",
+  "version": "1.0.0",
+  "description": "Auto form generation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShadrinIgor/form-fields.git"
+  },
+  "dependencies": {
+    "@angular/animations": "^8.2.5",
+    "@angular/cdk": "^8.1.4",
+    "@angular/common": "^8.2.5",
+    "@angular/compiler": "^8.2.5",
+    "@angular/core": "^8.2.5",
+    "@angular/forms": "^8.2.5",
+    "@angular/material": "^8.1.4",
+    "@angular/material-moment-adapter": "^8.1.4",
+    "@angular/platform-browser": "^8.2.5",
+    "@angular/platform-browser-dynamic": "^8.2.5",
+    "@angular/platform-server": "^8.2.5",
+    "rxjs": "^6.5.3"
+  },
+  "keywords": [
+    "Forms",
+    "Form",
+    "field"
+  ],
+  "author": "Shadrin Igor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShadrinIgor/form-fields/issues"
+  },
+  "homepage": "https://github.com/ShadrinIgor/form-fields#readme"
+}
